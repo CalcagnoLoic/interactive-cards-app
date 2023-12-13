@@ -14,25 +14,64 @@
         <link rel="stylesheet" href="dist/style/output.css" />
     </head>
     <body>
-        <main>
+        <main class="relative flex flex-col md:flex-row">
             <div class="left-side">
-                <img src="assets/images/bg-main-desktop.png" alt="">
+                <picture>
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="assets/images/bg-main-desktop.png"
+                        alt="background"
+                    />
+                    <img
+                        src="assets/images/bg-main-mobile.png"
+                        alt="background"
+                        class="w-full md:h-screen"
+                    />
+                </picture>
             </div>
             <div class="wrapper-cards">
-                <div class="wrapper-firstcard">
-                    <img src="assets/images/card-logo.svg" alt="logo card" />
-                    <img src="assets/images/bg-card-front.png" alt="first card" />
-                    <span class="cardnumber">0000 0000 0000 0000</span>
-                    <span class="cardname">jane appleseed</span>
-                    <span class="card-exp">00/00</span>
+                <div
+                    class="wrapper-firstcard absolute left-5 top-36 z-20 w-9/12 sm:left-16 sm:top-64 md:left-16 md:top-24 md:z-10 md:w-full"
+                >
+                    <img
+                        src="assets/images/card-logo.svg"
+                        alt="logo card"
+                        class="absolute left-6 top-6 w-1/6 sm:w-auto"
+                    />
+                    <img
+                        src="assets/images/bg-card-front.png"
+                        alt="first card"
+                        class="shadow-2xl"
+                    />
+                    <span
+                        class="cardnumber absolute left-6 top-20 text-body text-sm tracking-widest text-white sm:top-32 sm:text-2xl"
+                        >0000 0000 0000 0000</span
+                    >
+                    <span
+                        class="cardname absolute left-6 top-32 text-xs uppercase text-white sm:top-48 sm:text-body"
+                        >jane appleseed</span
+                    >
+                    <span
+                        class="card-exp absolute left-44 top-32 text-xs text-white sm:left-[23rem] sm:top-48 sm:text-body"
+                        >00/00</span
+                    >
                 </div>
-                <div class="wrapper-secondcard">
-                    <img src="assets/images/bg-card-back.png" alt="second card">
-                    <span class="card-cvc">000</span>
+                <div
+                    class="wrapper-secondcard absolute left-20 top-8 z-10 sm:left-44 md:top-[24rem] md:z-10"
+                >
+                    <img
+                        src="assets/images/bg-card-back.png"
+                        alt="second card"
+                        class="w-11/12 shadow-2xl sm:w-auto"
+                    />
+                    <span
+                        class="card-cvc absolute left-56 top-[4.6rem] text-xs text-white sm:left-[22.5rem] sm:top-[6.8rem] sm:text-body"
+                        >000</span
+                    >
                 </div>
             </div>
-            <div class="right-side">
-                <form>
+            <div class="right-side flex h-screen items-center justify-center">
+                <form class="mx-auto">
                     <div class="form-group">
                         <label for="cardholder">cardholder name</label>
                         <input
