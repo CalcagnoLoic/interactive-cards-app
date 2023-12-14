@@ -19,7 +19,11 @@
     }
 
     input {
-        @apply mt-2 w-full rounded-xl border-2 border-mischka p-2;
+        @apply mt-2 w-full rounded-xl border-2 border-mischka p-2 outline-none;
+    }
+
+    input:active, input:focus {
+        @apply border-violet;
     }
 
     button[type="submit"] {
