@@ -4,6 +4,7 @@ import { validateCardNumber } from "./functions/validation/validateCardNumber.js
 import { validateExpDate } from "./functions/validation/validateExpDate.js";
 import { validateCVC } from "./functions/validation/validateCVC.js";
 import { formatCardNumber } from "./functions/formatCardNumber.js";
+import { messageThankYou } from "./functions/messageThankYou.js";
 
 const handleSubmit = () => {
     const form = document.querySelector("form");
