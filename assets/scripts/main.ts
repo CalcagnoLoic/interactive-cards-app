@@ -48,6 +48,8 @@ const handleSubmit = () => {
                     expDateYear,
                     cvc,
                 );
+
+                messageThankYou();
             }
         });
     }
