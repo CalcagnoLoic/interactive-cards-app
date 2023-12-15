@@ -4,7 +4,8 @@ export const validateCardNumber = (element: HTMLInputElement): boolean => {
     const spanNode = document.querySelector(
         ".errorMessageNumber",
     ) as HTMLInputElement;
-    const re = /^(\d{0,4})\s(\d{0,4})\s(\d{0,4})\s(\d{0,4})$/;
+    const re = /\D/gi
+    const reNum = /^(\d{0,4})\s(\d{0,4})\s(\d{0,4})\s(\d{0,4})$/;
 
     if (element.value === "") {
         showingErrorMessage(spanNode, "Can't be blank", "#FF5252");
