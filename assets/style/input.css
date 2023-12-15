@@ -18,8 +18,16 @@
         @apply text-body font-bold uppercase text-violet;
     }
 
+    .box {
+        @apply border-mischka;
+    }
+
+    .box-error {
+        @apply border-sunset_orange;
+    }
+
     input {
-        @apply mt-2 w-full rounded-xl border-2 border-mischka p-2 outline-none;
+        @apply mt-2 w-full rounded-xl border-2 p-2 outline-none;
     }
 
     input:active,
