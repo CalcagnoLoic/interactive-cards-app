@@ -1,4 +1,8 @@
 import { fillInformations } from "./functions/fillInformations.js";
+import { validateHolderName } from "./functions/validation/validateHolderName.js";
+import { validateCardNumber } from "./functions/validation/validateCardNumber.js";
+import { validateExpDate } from "./functions/validation/validateExpDate.js";
+import { validateCVC } from "./functions/validation/validateCVC.js";
 
 const handleSubmit = () => {
     const form = document.querySelector("form");
@@ -19,14 +23,27 @@ const handleSubmit = () => {
     if (form) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
+            const valideCardName = validateHolderName(cardHolderName);
+            const valideNumber = validateCardNumber(cardNumber);
+            const valideExpMonth = validateExpDate(expDateMonth);
+            const valideExpYear = validateExpDate(expDateYear);
+            const valideCVC = validateCVC(cvc);
 
-            fillInformations(
-                cardHolderName,
-                cardNumber,
-                expDateMonth,
-                expDateYear,
-                cvc,
-            );
+            if (
+                valideCardName &&
+                valideNumber &&
+                valideExpMonth &&
+                valideExpYear &&
+                valideCVC
+            ) {
+                fillInformations(
+                    cardHolderName,
+                    cardNumber,
+                    expDateMonth,
+                    expDateYear,
+                    cvc,
+                );
+            }
         });
     }
 };

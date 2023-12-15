@@ -3,7 +3,7 @@ export const fillInformations = (
     cardnumber: HTMLInputElement,
     expm: HTMLInputElement,
     expy: HTMLInputElement,
-    cvc: HTMLInputElement,
+    cvc: HTMLInputElement
 ): void => {
     const cardName = document.querySelector(".cardname");
     const cardNumber = document.querySelector(".cardnumber");
