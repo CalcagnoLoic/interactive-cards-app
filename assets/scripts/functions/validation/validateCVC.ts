@@ -9,25 +9,22 @@ export const validateCVC = (element: HTMLInputElement): boolean => {
     if (element.value === "") {
         showingErrorMessage(spanNode, "Can't be blank", "#FF5252");
         return false;
-    }
-
-    if (element.value.match(re)) {
+    } else if (element.value.match(re)) {
         showingErrorMessage(
             spanNode,
             "Wrong format, can be only numeric",
             "#FF5252",
         );
         return false;
-    }
-
-    if (element.value.length < 3) {
+    } else if (element.value.length < 3) {
         showingErrorMessage(
             spanNode,
             "There aren't enough characters",
             "#FF5252",
         );
         return false;
+    } else {
+        showingErrorMessage(spanNode, "", "#FF5252");
+        return true;
     }
-
-    return true;
 };

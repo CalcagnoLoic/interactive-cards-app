@@ -8,7 +8,8 @@ export const validateHolderName = (element: HTMLInputElement): boolean => {
     if (element.value === "") {
         showingErrorMessage(spanNode, "Can't be blank", "#FF5252");
         return false;
+    } else {
+        showingErrorMessage(spanNode, "", "#FF5252");
+        return true;
     }
-
-    return true;
 };
