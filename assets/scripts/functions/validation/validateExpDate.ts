@@ -2,9 +2,9 @@ import { showingErrorMessage } from "./showingErrorMessage.js";
 
 export const validateExpDate = (element: HTMLInputElement): boolean => {
     const spanNode = document.querySelector(
-        ".errorMessageExpirationDate",
+        ".error-message-expiration-date",
     ) as HTMLInputElement;
-    const re = /\D/;
+    const re = /\D/gi;
 
     if (element.value === "") {
         showingErrorMessage(spanNode, "Can't be blank", "#FF5252");
