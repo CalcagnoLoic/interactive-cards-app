@@ -2,10 +2,9 @@ import { showingErrorMessage } from "./showingErrorMessage.js";
 
 export const validateCardNumber = (element: HTMLInputElement): boolean => {
     const spanNode = document.querySelector(
-        ".errorMessageNumber",
+        ".error-message-card-number",
     ) as HTMLInputElement;
-    const re = /\D/gi
-    const reNum = /^(\d{0,4})\s(\d{0,4})\s(\d{0,4})\s(\d{0,4})$/;
+    const re = /^(\d{0,4})\s(\d{0,4})\s(\d{0,4})\s(\d{0,4})$/;
 
     if (element.value === "") {
         showingErrorMessage(spanNode, "Can't be blank", "#FF5252");

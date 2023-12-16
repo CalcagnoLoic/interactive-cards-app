@@ -2,7 +2,7 @@ import { showingErrorMessage } from "./showingErrorMessage.js";
 
 export const validateExpDate = (element: HTMLInputElement): boolean => {
     const spanNode = document.querySelector(
-        ".errorMessageExpirationDate",
+        ".error-message-expiration-date",
     ) as HTMLInputElement;
     const re = /\D/gi;
 

@@ -2,7 +2,7 @@ import { showingErrorMessage } from "./showingErrorMessage.js";
 
 export const validateHolderName = (element: HTMLInputElement): boolean => {
     const spanNode = document.querySelector(
-        ".errorMessageHolder",
+        ".error-message-card-holder-name",
     ) as HTMLInputElement;
 
     if (element.value === "") {

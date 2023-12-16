@@ -2,7 +2,7 @@ import { showingErrorMessage } from "./showingErrorMessage.js";
 
 export const validateCVC = (element: HTMLInputElement): boolean => {
     const spanNode = document.querySelector(
-        ".errorMessageCVC",
+        ".error-message-code-cvc",
     ) as HTMLInputElement;
     const re = /\D/gi;
 
