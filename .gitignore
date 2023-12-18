@@ -20,3 +20,4 @@ node_modules/
 readme-template.md
 style-guide.md
 dist/
+coverage/

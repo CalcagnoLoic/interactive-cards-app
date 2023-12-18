@@ -1,174 +1,170 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Calcagno Loïc" />
-        <meta name="description" content="Interactive cards app" />
-        <title>Interactive cards app</title>
-        <link
-            rel="shortcut icon"
-            href="assets/images/favicon-32x32.png"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="dist/style/output.css" />
-    </head>
-    <body>
-        <main class="relative flex flex-col md:flex-row">
-            <div class="left-side">
-                <picture>
-                    <source
-                        media="(min-width: 800px)"
-                        srcset="assets/images/bg-main-desktop.png"
-                        alt="background"
-                    />
-                    <img
-                        src="assets/images/bg-main-mobile.png"
-                        alt="background"
-                        class="w-full md:h-screen"
-                    />
-                </picture>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Calcagno Loïc" />
+    <meta name="description" content="Interactive cards app" />
+    <title>Interactive cards app</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./dist/style/output.css" />
+  </head>
+  <body>
+    <main class="relative flex flex-col md:flex-row">
+      <div class="left-side">
+        <picture>
+          <source
+            media="(min-width: 800px)"
+            srcset="./src/assets/images/bg-main-desktop.png"
+            alt="background"
+          />
+          <img
+            src="./src/assets/images/bg-main-mobile.png"
+            alt="background"
+            class="w-full md:h-screen"
+          />
+        </picture>
+      </div>
+      <div class="wrapper-cards">
+        <div
+          class="wrapper-firstcard md:w-12/12 absolute left-5 top-36 z-20 w-9/12 sm:left-16 sm:top-64 md:left-16 md:top-24 md:z-10 md:w-fit"
+        >
+          <img
+            src="./src/assets/images/card-logo.svg"
+            alt="logo card"
+            class="absolute left-6 top-6 w-1/6 sm:w-auto"
+          />
+          <img
+            src="./src/assets/images/bg-card-front.png"
+            alt="first card"
+            class="shadow-2xl"
+          />
+          <span
+            class="card-number absolute left-6 top-20 text-body text-sm tracking-widest text-white sm:top-32 sm:text-2xl"
+            >0000 0000 0000 0000</span
+          >
+          <span
+            class="card-holder-name absolute left-6 top-32 text-xs uppercase text-white sm:top-48 sm:text-body"
+            >jane appleseed</span
+          >
+          <span
+            class="card-expiration-date absolute left-44 top-32 text-xs text-white sm:left-[23rem] sm:top-48 sm:text-body"
+          >
+            <span class="expiration-date-month">00</span>
+            /
+            <span class="expiration-date-year">00</span></span
+          >
+        </div>
+        <div
+          class="wrapper-secondcard absolute left-20 top-8 z-10 sm:left-44 md:top-[24rem] md:z-10"
+        >
+          <img
+            src="./src/assets/images/bg-card-back.png"
+            alt="second card"
+            class="w-11/12 shadow-2xl sm:w-auto"
+          />
+          <span
+            class="card-code-cvc absolute left-56 top-[4.6rem] text-xs text-white sm:left-[22.5rem] sm:top-[6.8rem] sm:text-body"
+            >000</span
+          >
+        </div>
+      </div>
+      <div
+        class="right-side m-auto ml-16 mr-10 mt-20 block sm:ml-44 sm:mt-36 md:ml-96 md:mt-auto"
+      >
+        <form class="w-fit md:w-4/6">
+          <div class="form-group mb-5 flex flex-col">
+            <label for="card-holder-name">cardholder name</label>
+            <input
+              type="text"
+              name="card-holder-name"
+              id="card-holder-name"
+              placeholder="e.g. Jane Appleseed"
+              class="box"
+            />
+            <span
+              class="error-message-card-holder-name text-xs font-semibold italic text-sunset_orange"
+            ></span>
+          </div>
+          <div class="form-group mb-5 flex flex-col">
+            <label for="card-number">card number</label>
+            <input
+              type="text"
+              name="card-number"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="19"
+              class="box"
+            />
+            <span
+              class="error-message-card-number text-xs font-semibold italic text-sunset_orange"
+            ></span>
+          </div>
+          <div class="form-group mb-10 flex">
+            <div class="expiration-date flex flex-col">
+              <label for="expiration-date">exp. date (mm/yy)</label>
+              <div class="flex gap-5">
+                <input
+                  type="text"
+                  name="expiration-date-month"
+                  id="expiration-date-month"
+                  placeholder="MM"
+                  class="w-2/6"
+                  maxlength="2"
+                />
+                <input
+                  type="text"
+                  name="expiration-date-year"
+                  id="expiration-date-year"
+                  placeholder="YY"
+                  class="w-2/6"
+                  maxlength="2"
+                />
+              </div>
+              <span
+                class="error-message-expiration-date text-xs font-semibold italic text-sunset_orange"
+              ></span>
             </div>
-            <div class="wrapper-cards">
-                <div
-                    class="wrapper-firstcard md:w-12/12 absolute left-5 top-36 z-20 w-9/12 sm:left-16 sm:top-64 md:left-16 md:top-24 md:z-10 md:w-fit"
-                >
-                    <img
-                        src="assets/images/card-logo.svg"
-                        alt="logo card"
-                        class="absolute left-6 top-6 w-1/6 sm:w-auto"
-                    />
-                    <img
-                        src="assets/images/bg-card-front.png"
-                        alt="first card"
-                        class="shadow-2xl"
-                    />
-                    <span
-                        class="card-number absolute left-6 top-20 text-body text-sm tracking-widest text-white sm:top-32 sm:text-2xl"
-                        >0000 0000 0000 0000</span
-                    >
-                    <span
-                        class="card-holder-name absolute left-6 top-32 text-xs uppercase text-white sm:top-48 sm:text-body"
-                        >jane appleseed</span
-                    >
-                    <span
-                        class="card-expiration-date absolute left-44 top-32 text-xs text-white sm:left-[23rem] sm:top-48 sm:text-body"
-                    >
-                        <span class="expiration-date-month">00</span>
-                        /
-                        <span class="expiration-date-year">00</span></span
-                    >
-                </div>
-                <div
-                    class="wrapper-secondcard absolute left-20 top-8 z-10 sm:left-44 md:top-[24rem] md:z-10"
-                >
-                    <img
-                        src="assets/images/bg-card-back.png"
-                        alt="second card"
-                        class="w-11/12 shadow-2xl sm:w-auto"
-                    />
-                    <span
-                        class="card-code-cvc absolute left-56 top-[4.6rem] text-xs text-white sm:left-[22.5rem] sm:top-[6.8rem] sm:text-body"
-                        >000</span
-                    >
-                </div>
+            <div class="code-cvc flex flex-col">
+              <label for="code-cvc">cvc</label>
+              <input
+                type="text"
+                name="code-cvc"
+                id="code-cvc"
+                placeholder="e.g. 123"
+                maxlength="3"
+                class="box"
+              />
+              <span
+                class="error-message-code-cvc text-xs font-semibold italic text-sunset_orange"
+              ></span>
             </div>
-            <div
-                class="right-side m-auto ml-16 mr-10 mt-20 block sm:ml-44 sm:mt-36 md:ml-96 md:mt-auto"
-            >
-                <form class="w-fit md:w-4/6">
-                    <div class="form-group mb-5 flex flex-col">
-                        <label for="card-holder-name">cardholder name</label>
-                        <input
-                            type="text"
-                            name="card-holder-name"
-                            id="card-holder-name"
-                            placeholder="e.g. Jane Appleseed"
-                            class="box"
-                        />
-                        <span
-                            class="error-message-card-holder-name text-xs font-semibold italic text-sunset_orange"
-                        ></span>
-                    </div>
-                    <div class="form-group mb-5 flex flex-col">
-                        <label for="card-number">card number</label>
-                        <input
-                            type="text"
-                            name="card-number"
-                            id="card-number"
-                            placeholder="e.g. 1234 5678 9123 0000"
-                            maxlength="19"
-                            class="box"
-                        />
-                        <span
-                            class="error-message-card-number text-xs font-semibold italic text-sunset_orange"
-                        ></span>
-                    </div>
-                    <div class="form-group mb-10 flex">
-                        <div class="expiration-date flex flex-col">
-                            <label for="expiration-date"
-                                >exp. date (mm/yy)</label
-                            >
-                            <div class="flex gap-5">
-                                <input
-                                    type="text"
-                                    name="expiration-date-month"
-                                    id="expiration-date-month"
-                                    placeholder="MM"
-                                    class="w-2/6"
-                                    maxlength="2"
-                                />
-                                <input
-                                    type="text"
-                                    name="expiration-date-year"
-                                    id="expiration-date-year"
-                                    placeholder="YY"
-                                    class="w-2/6"
-                                    maxlength="2"
-                                />
-                            </div>
-                            <span
-                                class="error-message-expiration-date text-xs font-semibold italic text-sunset_orange"
-                            ></span>
-                        </div>
-                        <div class="code-cvc flex flex-col">
-                            <label for="code-cvc">cvc</label>
-                            <input
-                                type="text"
-                                name="code-cvc"
-                                id="code-cvc"
-                                placeholder="e.g. 123"
-                                maxlength="3"
-                                class="box"
-                            />
-                            <span
-                                class="error-message-code-cvc text-xs font-semibold italic text-sunset_orange"
-                            ></span>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit">Confirm</button>
-                    </div>
-                </form>
+          </div>
+          <div>
+            <button type="submit">Confirm</button>
+          </div>
+        </form>
 
-                <div class="message-thank-you disapear">
-                    <img
-                        src="assets/images/icon-complete.svg"
-                        alt="Complete form succeess"
-                        class="mx-auto mb-5 block"
-                    />
-                    <h1
-                        class="mb-5 text-center text-2xl font-bold uppercase text-violet"
-                    >
-                        thank you !!
-                    </h1>
-                    <p class="mb-5 text-center text-mamba">
-                        We've added your credit details!
-                    </p>
-                    <button>Continue</button>
-                </div>
-            </div>
-        </main>
-    </body>
-    <script type="module" src="dist/scripts/main.js"></script>
+        <div class="message-thank-you disapear">
+          <img
+            src="./assets/images/icon-complete.svg"
+            alt="Complete form succeess"
+            class="mx-auto mb-5 block"
+          />
+          <h1 class="mb-5 text-center text-2xl font-bold uppercase text-violet">
+            thank you !!
+          </h1>
+          <p class="mb-5 text-center text-mamba">
+            We've added your credit details!
+          </p>
+          <button>Continue</button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script type="module" src="./dist/scripts/main.js"></script>
 </html>
