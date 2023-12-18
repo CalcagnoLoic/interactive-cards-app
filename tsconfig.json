@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "module": "es6",
-        "outDir": "dist/scripts",
-        "target": "ES5",
-        "alwaysStrict": true
-    },
-    "include": ["assets/scripts"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "module": "es6",
+    "outDir": "dist/scripts",
+    "target": "ES5",
+    "alwaysStrict": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "src/utils/*.spec.ts"]
 }
