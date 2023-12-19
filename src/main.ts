@@ -1,6 +1,7 @@
 import { validateHolderName } from "./validation/validateHolderName.js";
 import { validateCardNumber } from "./validation/validateCardNumber.js";
-import { validateExpDate } from "./validation/validateExpDate.js";
+import { validateExpirationMonth } from "./validation/validateExpirationMonth.js";
+import { validateExpirationYear } from "./validation/validateExpirationYear.js";
 import { validateCVC } from "./validation/validateCVC.js";
 import { formatCardNumber } from "./utils/formatCardNumber.js";
 import { toggleFormToMessage } from "./utils/toggleFormToMessage.js";
@@ -81,8 +82,8 @@ const handleSubmit = () => {
       e.preventDefault();
       const valideCardName = validateHolderName(cardHolderName);
       const valideNumber = validateCardNumber(cardNumber);
-      const valideExpMonth = validateExpDate(expirationDateMonth);
-      const valideExpYear = validateExpDate(expirationDateYear);
+      const valideExpMonth = validateExpirationMonth(expirationDateMonth);
+      const valideExpYear = validateExpirationYear(expirationDateYear);
       const valideCVC = validateCVC(codeCVC);
 
       if (
