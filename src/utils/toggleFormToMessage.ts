@@ -1,3 +1,5 @@
+import { resetNodesAfterSubmit } from "./resetNodesAfterSubmit.js";
+
 export const toggleFormToMessage = (): void => {
   const form = document.querySelector("form");
   const messageThankYou = document.querySelector(".message-thank-you");
@@ -9,6 +11,7 @@ export const toggleFormToMessage = (): void => {
     setTimeout(() => {
       messageThankYou.classList.add("disapear");
       form.classList.remove("disapear");
+      resetNodesAfterSubmit()
     }, 6000);
   }
 };
