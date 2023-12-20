@@ -45,7 +45,7 @@ jobs:
             - run: npm run design
             - run: npm run compile
             - run: cp index.html ./dist/
-            - run: cp ./public/ ./dist/
+            - run: cp -r ./public/ ./dist/
             - uses: actions/upload-pages-artifact@v2
               with: 
                 path: ./dist/
