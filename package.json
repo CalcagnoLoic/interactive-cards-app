@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "dev:design": "npx tailwindcss -i ./src/assets/style/input.css -o ./dist/style/output.css --watch",
+    "dev:design": "npx tailwindcss -i ./public/style/input.css -o ./dist/style/output.css --watch",
     "dev:compile": "tsc --watch",
     "dev:test": "vitest",
     "dev:test-coverage": "vitest --coverage",
     "dev:format": "prettier --write .",
-    "design": "npx tailwindcss -i ./src/assets/style/input.css -o ./dist/style/output.css",
+    "design": "npx tailwindcss -i ./public/style/input.css -o ./dist/style/output.css",
     "compile": "tsc",
     "linter": "eslint --ignore-path .eslintignore --ext .ts ."
   },

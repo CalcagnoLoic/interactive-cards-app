@@ -5,6 +5,7 @@ import { validateExpirationYear } from "./validation/validateExpirationYear.js";
 import { validateCVC } from "./validation/validateCVC.js";
 import { formatCardNumber } from "./utils/formatCardNumber.js";
 import { toggleFormToMessage } from "./utils/toggleFormToMessage.js";
+import { showingErrorMessage } from "./validation/showingErrorMessage.js";
 
 const handleKeyupCardHolderName = () => {
   const cardHolderName = document.querySelector(
@@ -68,30 +69,53 @@ const handleSubmit = () => {
   const cardHolderName = document.querySelector(
     "#card-holder-name",
   ) as HTMLInputElement;
+  const spanNodeHolderName = document.querySelector(
+    ".error-message-card-holder-name",
+  );
   const cardNumber = document.querySelector("#card-number") as HTMLInputElement;
+  const spanNodeCardNumber = document.querySelector(
+    ".error-message-card-number",
+  );
   const expirationDateMonth = document.querySelector(
     "#expiration-date-month",
   ) as HTMLInputElement;
+  const spanNodeMonth = document.querySelector(
+    ".error-message-expiration-month",
+  );
   const expirationDateYear = document.querySelector(
     "#expiration-date-year",
   ) as HTMLInputElement;
+  const spanNodeYear = document.querySelector(".error-message-expiration-year");
   const codeCVC = document.querySelector("#code-cvc") as HTMLInputElement;
+  const spanNodeCVC = document.querySelector(".error-message-code-cvc");
 
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const valideCardName = validateHolderName(cardHolderName);
-      const valideNumber = validateCardNumber(cardNumber);
-      const valideExpMonth = validateExpirationMonth(expirationDateMonth);
-      const valideExpYear = validateExpirationYear(expirationDateYear);
-      const valideCVC = validateCVC(codeCVC);
+      const [isValidCardName, errorCardNameMessage] = validateHolderName(
+        cardHolderName.value,
+      );
+      const [isValidNumber, errorCardNumberMessage] = validateCardNumber(
+        cardNumber.value,
+      );
+      const [isValidExpMonth, errorExpirationMonthMessage] =
+        validateExpirationMonth(expirationDateMonth.value);
+      const [isValidExpYear, errorExpirationYearMessage] =
+        validateExpirationYear(expirationDateYear.value);
+      const [isValidCVC, errorCvcMessage] = validateCVC(codeCVC.value);
+
+      showingErrorMessage(spanNodeHolderName, errorCardNameMessage);
+      showingErrorMessage(spanNodeCardNumber, errorCardNumberMessage);
+      showingErrorMessage(spanNodeMonth, errorExpirationMonthMessage);
+      showingErrorMessage(spanNodeYear, errorExpirationYearMessage);
+      showingErrorMessage(spanNodeCVC, errorCvcMessage);
 
       if (
-        valideCardName &&
-        valideNumber &&
-        valideExpMonth &&
-        valideExpYear &&
-        valideCVC
+        isValidCardName &&
+        isValidNumber &&
+        isValidExpMonth &&
+        isValidExpYear &&
+        isValidCVC
       ) {
         toggleFormToMessage();
       }
