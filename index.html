@@ -12,7 +12,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./style/output.css" />
-    <!--<link rel="stylesheet" href="./dist/style/output.css" /> dev--> 
+    <!--<link rel="stylesheet" href="./dist/style/output.css" /> dev-->
   </head>
   <body>
     <main class="relative flex flex-col lg:flex-row">
@@ -53,13 +53,15 @@
               class="absolute -bottom-6 left-0 w-[286px] shadow-2xl lg:-bottom-36 lg:left-24 lg:w-[447px]"
             />
             <span
-              class="card-code-cvc absolute left-64 top-[5rem] text-white lg:left-[25rem] lg:top-[30.5rem]"
+              class="card-code-cvc absolute left-64 top-[5rem] text-xs text-white lg:left-[25rem] lg:top-[30.5rem] lg:text-lg"
               >000</span
             >
           </div>
         </div>
       </div>
-      <div class="mx-5 flex justify-center lg:absolute lg:top-[12.8rem] lg:left-[32rem] ">
+      <div
+        class="mx-5 flex justify-center lg:absolute lg:left-[32rem] lg:top-[12.8rem]"
+      >
         <form class="md:w-4/6">
           <div class="form-group mb-5 flex flex-col">
             <label for="card-holder-name">cardholder name</label>
@@ -133,22 +135,22 @@
           </div>
         </form>
 
-        <div class="message-thank-you disapear lg:absolute lg:top-[6rem] lg:left-[10rem] w-[300px]">
-            <img
-              src="./public/images/icon-complete.svg"
-              alt="Complete form succeess"
-              class="mx-auto mb-5 block animate-bounce"
-            />
-            <h1
-              class="mb-5 text-center text-2xl font-bold uppercase text-violet"
-            >
-              thank you !!
-            </h1>
-            <p class="mb-5 text-center text-mamba">
-              We've added your credit details!
-            </p>
-            <button>Continue</button>
-          </div>
+        <div
+          class="message-thank-you disapear w-[300px] lg:absolute lg:left-[10rem] lg:top-[6rem]"
+        >
+          <img
+            src="./public/images/icon-complete.svg"
+            alt="Complete form succeess"
+            class="mx-auto mb-5 block animate-bounce"
+          />
+          <h1 class="mb-5 text-center text-2xl font-bold uppercase text-violet">
+            thank you !!
+          </h1>
+          <p class="mb-5 text-center text-mamba">
+            We've added your credit details!
+          </p>
+          <button>Continue</button>
+        </div>
       </div>
     </main>
   </body>
