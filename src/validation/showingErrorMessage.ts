@@ -1,5 +1,5 @@
 export const showingErrorMessage = (
-  elem: HTMLInputElement,
+  elem: Element,
   message: string,
 ) => {
   elem.innerHTML = message;

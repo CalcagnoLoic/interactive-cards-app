@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { formatCardNumber } from "./formatCardNumber";
+import { formatCardNumber } from "../utils/formatCardNumber";
 
 describe("formatCardNumber Unit Test Suites", () => {
   it("should be reformat the string", () => {
