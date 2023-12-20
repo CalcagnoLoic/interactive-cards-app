@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: spaceGrotesk;
-  src: url(../../src/assets/font/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
+  src: url(../../public/font/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
 }
 
 @layer base {
