@@ -13,7 +13,7 @@
 Your users should be able to:
 
 - [x] Fill in the form and see the card details update in real time
-- [x]Receive error messages when the form is submitted if:
+- [x] Receive error messages when the form is submitted if:
 
   - [x] Any input field is empty
   <p align="center">
