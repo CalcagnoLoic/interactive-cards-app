@@ -1,5 +1,3 @@
-import { showingErrorMessage } from "./showingErrorMessage.js";
-
 export const validateExpirationYear = (
   expirationYearValue: string,
 ): [boolean, string] => {
