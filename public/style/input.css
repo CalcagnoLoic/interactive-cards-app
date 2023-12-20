@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: spaceGrotesk;
-  src: url(../../public/font/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
+  src: url(../public/font/Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
 }
 
 @layer base {
@@ -13,16 +13,14 @@
   }
 
   .background {
-    background-image: url(../../public/images/bg-main-mobile.png);
-    background-size: contain;
+    @apply bg-contain;
+    background-image: url("../public/images/bg-main-mobile.png");
   }
 
   @media (min-width: 1024px) {
     .background {
-      background-image: url(../../public/images/bg-main-desktop.png);
-      background-size: auto;
-      background-repeat: repeat-y;
-      height: 100vh
+      @apply h-screen bg-auto bg-repeat-y;
+      background-image: url("../public/images/bg-main-desktop.png");
     }
   }
 }

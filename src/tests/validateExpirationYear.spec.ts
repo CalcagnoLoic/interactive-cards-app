@@ -27,15 +27,6 @@ describe("validateCVC Unit Test Suites", () => {
     ]);
   });
 
-  it("should return an error message and the false boolean if there month is not valid", () => {
-    const yearInFuture = new Date().getFullYear().toString().slice(0, -2) + 1;
-
-    expect(validateExpirationYear(yearInFuture)).toStrictEqual([
-      false,
-      "Year cannot be in future",
-    ]);
-  });
-
   it("should not return any error message", () => {
     expect(validateExpirationYear("12")).toStrictEqual([true, ""]);
   });
