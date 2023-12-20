@@ -11,6 +11,20 @@
   html {
     font-family: spaceGrotesk;
   }
+
+  .background {
+    background-image: url(../../public/images/bg-main-mobile.png);
+    background-size: contain;
+  }
+
+  @media (min-width: 1024px) {
+    .background {
+      background-image: url(../../public/images/bg-main-desktop.png);
+      background-size: auto;
+      background-repeat: repeat-y;
+      height: 100vh
+    }
+  }
 }
 
 @layer components {
