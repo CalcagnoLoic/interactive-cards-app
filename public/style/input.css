@@ -13,12 +13,14 @@
   }
 
   .background {
-    @apply bg-[url('../public/images/bg-main-mobile.png')] bg-contain;
+    @apply bg-contain;
+    background-image: url("../public/images/bg-main-mobile.png");
   }
 
   @media (min-width: 1024px) {
     .background {
-      @apply h-screen bg-[url('../public/images/bg-main-desktop.png')] bg-auto bg-repeat-y;
+      @apply h-screen bg-auto bg-repeat-y;
+      background-image: url("../public/images/bg-main-desktop.png");
     }
   }
 }
