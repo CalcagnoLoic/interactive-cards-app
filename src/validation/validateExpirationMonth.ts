@@ -1,33 +1,19 @@
-import { showingErrorMessage } from "./showingErrorMessage.js";
-
-export const validateExpirationMonth = (element: HTMLInputElement): boolean => {
-  const spanNodeMonth = document.querySelector(
-    ".error-message-expiration-month",
-  ) as HTMLInputElement;
+export const validateExpirationMonth = (
+  expirationMonthValue: string,
+): [boolean, string] => {
   const re = /\D/gi;
-  const matchResult = element.value.match(re);
+  const matchResult = expirationMonthValue.match(re);
 
   switch (true) {
-    case element.value === "":
-      showingErrorMessage(spanNodeMonth, "Month an't be blank");
-      return false;
+    case expirationMonthValue === "":
+      return [false, "Month can't be blank"];
     case matchResult !== null:
-      showingErrorMessage(
-        spanNodeMonth,
-        "Wrong format, month can be only numeric",
-      );
-      return false;
-    case element.value.length < 2:
-      showingErrorMessage(
-        spanNodeMonth,
-        "There aren't enough characters in month",
-      );
-      return false;
-    case Number(element.value) > 12 || Number(element.value) < 1:
-      showingErrorMessage(spanNodeMonth, "Month must be between 1 and 12");
-      return false;
+      return [false, "Wrong format, month can be only numeric"];
+    case expirationMonthValue.length < 2:
+      return [false, "There aren't enough characters in month"];
+    case Number(expirationMonthValue) > 12 || Number(expirationMonthValue) < 1:
+      return [false, "Month must be between 1 and 12"];
     default:
-      showingErrorMessage(spanNodeMonth, "");
-      return true;
+      return [true, ""];
   }
 };

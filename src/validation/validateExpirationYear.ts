@@ -1,31 +1,25 @@
 import { showingErrorMessage } from "./showingErrorMessage.js";
 
-export const validateExpirationYear = (element: HTMLInputElement): boolean => {
-  const spanNodeYear = document.querySelector(
-    ".error-message-expiration-year",
-  ) as HTMLInputElement;
+export const validateExpirationYear = (
+  expirationYearValue: string,
+): [boolean, string] => {
   const re = /\D/gi;
-  const matchResult = element.value.match(re);
+  const matchResult = expirationYearValue.match(re);
 
   const getCurrentYearLast2Digits = (): number => {
     return new Date().getFullYear() % 100;
   };
 
   switch (true) {
-    case element.value === "":
-      showingErrorMessage(spanNodeYear, "Can't be blank");
-      return false;
+    case expirationYearValue === "":
+      return [false, "Year can't be blank"];
     case matchResult !== null:
-      showingErrorMessage(spanNodeYear, "Wrong format, can be only numeric");
-      return false;
-    case element.value.length < 2:
-      showingErrorMessage(spanNodeYear, "There aren't enough characters");
-      return false;
-    case Number(element.value) > getCurrentYearLast2Digits():
-      showingErrorMessage(spanNodeYear, "Year cannot be in future");
-      return false;
+      return [false, "Wrong format, year can be only numeric"];
+    case expirationYearValue.length < 2:
+      return [false, "There aren't enough characters in year"];
+    case Number(expirationYearValue) > getCurrentYearLast2Digits():
+      return [false, "Year cannot be in future"];
     default:
-      showingErrorMessage(spanNodeYear, "");
-      return true;
+      return [true, ""];
   }
 };
