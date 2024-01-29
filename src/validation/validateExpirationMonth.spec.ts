@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validateExpirationMonth } from "../validation/validateExpirationMonth";
+import { validateExpirationMonth } from "./validateExpirationMonth";
 
 describe("validateCVC Unit Test Suites", () => {
   it("should return something", () => {
