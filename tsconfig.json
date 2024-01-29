@@ -6,5 +6,5 @@
     "alwaysStrict": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "src/tests"]
+  "exclude": ["node_modules", "src/**/*.spec.ts"]
 }

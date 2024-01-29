@@ -1,33 +1,30 @@
 import { describe, it, expect } from "vitest";
-import { validateExpirationYear } from "../validation/validateExpirationYear";
+import { validateCVC } from "./validateCVC";
 
 describe("validateCVC Unit Test Suites", () => {
   it("should return something", () => {
-    expect(validateExpirationYear("")).toBeDefined();
+    expect(validateCVC("")).toBeDefined();
   });
 
   it("should return an error message and the false boolean if there is no args", () => {
-    expect(validateExpirationYear("")).toStrictEqual([
-      false,
-      "Year can't be blank",
-    ]);
+    expect(validateCVC("")).toStrictEqual([false, "Can't be blank"]);
   });
 
   it("should return an error message and the false boolean if the format of argument is not valid", () => {
-    expect(validateExpirationYear("2o")).toStrictEqual([
+    expect(validateCVC("ajo")).toStrictEqual([
       false,
-      "Wrong format, year can be only numeric",
+      "Wrong format, can be only numeric",
     ]);
   });
 
   it("should return an error message and the false boolean if there is not enough characters", () => {
-    expect(validateExpirationYear("2")).toStrictEqual([
+    expect(validateCVC("2")).toStrictEqual([
       false,
-      "There aren't enough characters in year",
+      "There aren't enough characters",
     ]);
   });
 
   it("should not return any error message", () => {
-    expect(validateExpirationYear("12")).toStrictEqual([true, ""]);
+    expect(validateCVC("123")).toStrictEqual([true, ""]);
   });
 });
